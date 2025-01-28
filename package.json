@@ -1,0 +1,30 @@
+{
+  "name": "prisma",
+  "version": "1.0.0",
+  "description": "Readme file",
+  "main": "index.js",
+  "scripts": {
+  "dev":"ts-node-dev --respawn --transpile-only src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abdullah-1922/Prisma_Learn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abdullah-1922/Prisma_Learn/issues"
+  },
+  "homepage": "https://github.com/Abdullah-1922/Prisma_Learn#readme",
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "prisma": "^6.2.1",
+    "ts-node-dev": "^2.0.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.2.1"
+  }
+}
