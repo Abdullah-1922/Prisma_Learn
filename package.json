@@ -4,12 +4,12 @@
   "description": "Readme file",
   "main": "index.js",
   "scripts": {
-  "dev":"ts-node-dev --respawn --transpile-only src/create.ts"
+  "dev":"ts-node-dev --respawn --transpile-only src/pagination-sorting.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Abdullah-1922/Prisma_Learn.git"
-  },
+  }, 
   "keywords": [],
   "author": "",
   "license": "ISC",
