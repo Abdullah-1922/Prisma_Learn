@@ -3,45 +3,56 @@ import { Prisma, PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 const main = async () => {
-  const result = await prisma.post.create({
-      data:{
-          title:"Hello World",
-          content:"This is a test post",
-          published:true,
-          author:'Abdullah Al Kafi',
+  //  const createUser = await prisma.user.create({
+  //   data:{
+  //     username: "user2",
+  //     email:"user2@aak.com",
+  //     role: 'user'
+  //   }
+  //  })
 
-      }
-  })
-  console.log(result);
-  const createMany = await prisma.post.createMany({
-    data: [
-      {
-        title: "Title 1",
-        content: "This is a test post 1",
-        published: true,
-        author: "Abdullah Al Kafi 1",
-      },
-      {
-        title: "Title 2",
-        content: "This is a test post 2",
-        published: true,
-        author: "Abdullah Al Kafi 2",
-      },
-      {
-        title: "Title 3",
-        content: "This is a test post 3",
-        published: true,
-        author: "Abdullah Al Kafi 3",
-      },
-      {
-        title: "Title 4",
-        content: "This is a test post 4",
-        published: true,
-        author: "Abdullah Al Kafi 4",
-      },
-    ],
+  //  const createProfile = await prisma.profile.create({
+  //    data:{
+  //      bio: "this is my bio",
+  //      userId:6,
+
+  //    }
+  //  })
+
+  const createCategory = await prisma.category.create({
+    data: {
+      name: "software engineering",
+    },
   });
-  console.log({ createMany });
+
+  const createPost = await prisma.post.create({
+    data: {
+      title: "This is title 4 ",
+      content: "this is content 4" ,
+      authorId: 1,
+      PostCategory: {
+        create: [
+          {
+            categoryId: 1,
+          },
+          {
+            categoryId: 2,
+          },
+          {
+            categoryId: 11,
+          },
+          {
+            categoryId: 13,
+          },
+        ],
+      },
+    },
+    include: {
+      PostCategory: true,
+    },
+  });
+
+  console.log(createPost);
 };
 
-main();
+// main();
